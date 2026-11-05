@@ -1,0 +1,30 @@
+{
+  "version": 0,
+  "fixtures": [
+	{
+	  "name": "payment_intent_fixture",
+	  "path": "/v1/payment_intents",
+	  "method": "post",
+	  "params": {
+	    "amount": 4000,
+	    "currency": "usd",
+	    "metadata": {
+	      "order_id": "3"
+	    },
+	    "automatic_payment_methods": {
+	      "enabled": true,
+	      "allow_redirects": "never"
+	    }
+	  }
+	}
+,
+    {
+      "name": "confirm_intent",
+      "path": "/v1/payment_intents/${payment_intent_fixture:id}/confirm",
+      "method": "post",
+      "params": {
+        "payment_method": "pm_card_visa"
+      }
+    }
+  ]
+}
