@@ -1,20 +1,14 @@
 spring:
   application:
     name: store
-  datasource:
-    url: jdbc:mariadb://localhost:3306/store_api?createDatabaseIfNotExist=true
-    username: pineiro
-    password: "LTPIne:1436880"
-    driver-class-name: org.mariadb.jdbc.Driver
-  jpa:
-    show-sql: true
   flyway:
     baseline-on-migrate: false
   jwt:
     secret: ${JWT_SECRET}
     accessTokenExpiration: 7200 #2 hours
     refreshTokenExpiration: 604800 #7 days
+  profiles:
+    active: dev
 stripe:
   secretKey: ${STRIPE_SECRET_KEY}
   webhookSecretKey: ${STRIPE_WEBHOOK_SECRET_KEY}
-websiteUrl: http://localhost:4242

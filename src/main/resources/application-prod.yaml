@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    driver-class-name: org.mariadb.jdbc.Driver
+websiteUrl: https://mystore.com
