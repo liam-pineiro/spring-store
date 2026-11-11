@@ -16,6 +16,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,8 +31,13 @@ public class Cart {
 	@Column(name = "id")
 	private UUID id;
 	
-	@Column(name = "date_created", insertable = false, updatable = false)
+	@Column(name = "date_created", updatable = false)
 	private LocalDate dateCreated;
+
+	@PrePersist
+	private void onCreate() {
+		this.dateCreated = LocalDate.now();
+	}
 	
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.MERGE, orphanRemoval = true, fetch = FetchType.EAGER)
 	private Set<CartItem> items = new LinkedHashSet<>();

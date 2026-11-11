@@ -1,4 +1,4 @@
 $kind: http-request
-url: http://localhost:8080/carts/{{cartId}}
+url: "{{baseUrl}}/carts/{{cartId}}"
 method: GET
 order: 4000

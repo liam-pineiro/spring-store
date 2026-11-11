@@ -1,6 +1,8 @@
 $kind: http-request
-url: http://localhost:8080/products
+url: "{{baseUrl}}/products"
 method: GET
 headers:
-  Authorization: Bearer {{accessToken}}
+  - key: Authorization
+    value: Bearer {{accessToken}}
+    disabled: true
 order: 2000

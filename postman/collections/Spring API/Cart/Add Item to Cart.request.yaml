@@ -1,6 +1,6 @@
 $kind: http-request
 description: ""
-url: http://localhost:8080/carts/{{cartId}}/items
+url: "{{baseUrl}}/carts/{{cartId}}/items"
 method: POST
 headers:
   Authorization: Bearer {{accessToken}}

@@ -1,5 +1,5 @@
 $kind: http-request
-url: http://localhost:8080/orders
+url: "{{baseUrl}}/orders"
 method: GET
 headers:
   Authorization: Bearer {{accessToken}}

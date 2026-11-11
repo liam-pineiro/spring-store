@@ -1,6 +1,6 @@
 $kind: http-request
 description: ""
-url: http://localhost:8080/auth/login
+url: "{{baseUrl}}/auth/login"
 method: POST
 headers:
   - key: Authorization
@@ -10,9 +10,9 @@ body:
   type: json
   content: "{\r
 
-    \    \"email\": \"admin@domain.com\",\r
+    \    \"password\": \"12345678\",\r
 
-    \    \"password\": \"12345678\"\r
+    \    \"email\": \"user3@domain.com\"\r
 
     }"
 scripts:
