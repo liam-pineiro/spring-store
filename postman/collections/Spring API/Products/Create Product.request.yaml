@@ -1,0 +1,20 @@
+$kind: http-request
+description: ""
+url: http://localhost:8080/products
+method: POST
+headers:
+  Authorization: Bearer {{accessToken}}
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Product 3\",\r
+
+    \    \"price\": 15.00, \r
+
+    \    \"description\": \"Placeholder 3\",\r
+
+    \    \"categoryId\": 2\r
+
+    }"
+order: 1000
