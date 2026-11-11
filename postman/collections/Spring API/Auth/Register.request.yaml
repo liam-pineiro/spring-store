@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{baseUrl}}/users"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"User 3\", \r
+
+    \    \"password\": \"12345678\",\r
+
+    \    \"email\": \"user3@domain.com\"\r
+
+    }"
+order: 2000
