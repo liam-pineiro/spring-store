@@ -1,14 +1,14 @@
 CREATE TABLE carts
 (
-    id           UUID DEFAULT UUID() NOT NULL,
-    date_created DATE DEFAULT CURDATE() NOT NULL,
+    id           BINARY(16) NOT NULL,
+    date_created DATE       NOT NULL,
     CONSTRAINT pk_carts PRIMARY KEY (id)
 );
 
 CREATE TABLE cart_items
 (
     id         BIGINT AUTO_INCREMENT NOT NULL,
-    cart_id    UUID                  NOT NULL,
+    cart_id    BINARY(16)            NOT NULL,
     product_id BIGINT                NOT NULL,
     quantity   INT DEFAULT 1         NOT NULL,
     CONSTRAINT pk_cart_items PRIMARY KEY (id),
